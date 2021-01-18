@@ -276,8 +276,8 @@ extension ClientConnection.Builder {
 extension ClientConnection.Builder {
 
   @discardableResult
-  public func withCustomVerification(callback: NIOSSLCustomVerificationCallback) -> Self {
-    self.configuration.customVerificationCallBack = callback
+    public func withCustomVerification(callback: @escaping NIOSSLCustomVerificationCallback) -> Self {
+    self.configuration.customVerificationCallback = callback
     return self
   }
 }
