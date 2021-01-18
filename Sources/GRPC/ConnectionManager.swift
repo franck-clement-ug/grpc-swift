@@ -853,6 +853,7 @@ extension ConnectionManager {
             group: self.eventLoop,
             hasTLS: self.configuration.tls != nil
           ),
+          customVerificationCallBack: self.configuration.customVerificationCallBack,
           logger: self.logger
         )
 
