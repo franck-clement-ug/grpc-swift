@@ -277,7 +277,7 @@ extension ClientConnection {
     /// cycle.
     public var errorDelegate: ClientErrorDelegate?
 
-    public var customVerificationCallBack: NIOSSLCustomVerificationCallback?
+    public var customVerificationCallback: NIOSSLCustomVerificationCallback?
 
     /// A delegate which is called when the connectivity state is changed.
     public var connectivityStateDelegate: ConnectivityStateDelegate?
@@ -364,7 +364,7 @@ extension ClientConnection {
         label: "io.grpc",
         factory: { _ in SwiftLogNoOpLogHandler() }
       ),
-      customVerificationCallBack: NIOSSLCustomVerificationCallback? = nil,
+      customVerificationCallback: NIOSSLCustomVerificationCallback? = nil,
       debugChannelInitializer: ((Channel) -> EventLoopFuture<Void>)? = nil
     ) {
       self.target = target
@@ -379,7 +379,7 @@ extension ClientConnection {
       self.callStartBehavior = callStartBehavior
       self.httpTargetWindowSize = httpTargetWindowSize
       self.backgroundActivityLogger = backgroundActivityLogger
-      self.customVerificationCallBack = customVerificationCallBack
+      self.customVerificationCallback = customVerificationCallback
       self.debugChannelInitializer = debugChannelInitializer
     }
   }
